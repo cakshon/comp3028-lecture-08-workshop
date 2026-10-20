@@ -1,0 +1,32 @@
+### Welcome route
+GET http://localhost:3000/
+
+### Database health check
+GET http://localhost:3000/health
+
+### All users
+GET http://localhost:3000/users
+
+### Search for names containing Ja
+GET http://localhost:3000/users/search?name=Ja
+
+### One user
+GET http://localhost:3000/users/1
+
+### Create a user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "John",
+  "age": 30
+}
+
+### Try invalid input
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "",
+  "age": -5
+}

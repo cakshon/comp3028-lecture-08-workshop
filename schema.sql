@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS users (
+  user_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  age INTEGER NOT NULL CHECK (age BETWEEN 0 AND 130)
+);
+
+INSERT INTO users (name, age)
+VALUES ('Jane', 27), ('Joe', 26);
+
+SELECT user_id, name, age
+FROM users
+ORDER BY user_id;
